@@ -1,0 +1,154 @@
+@charset "UTF-8";
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;500&display=swap');
+
+/*
+COLORS
+================================================ */
+:root {
+  --main-color: #d30839;
+  --base-color: #f3e2d5;
+  --white: #fff;
+  --font-color: #3d3333;
+  --font-japanese: 'Kiwi Maru', serif; /* light300 medium500 */
+}
+
+/*
+    GENERAL STYLING
+================================================ */
+html {
+  font-size: 100%;
+}
+#game {
+  cursor: url('hammer.png'), auto;
+}
+#game:active {
+  cursor: url('active-hammer.png'), auto;
+}
+body {
+  background-image: url(sp-mogura-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  color: var(--font-color);
+  font-family: var(--font-japanese);
+  width: 100vw;
+  height: 100vh;
+  @media (600px < width) {
+    background-image: url(mogura-bg.jpg);
+  }
+  @media (1390px < width) {
+    background-size: contain;
+  }
+}
+
+/*
+    COMMON
+================================================ */
+a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+p {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+}
+li {
+  list-style: none;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* layout */
+.wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin-inline: auto;
+  /* margin: 10vh auto 0; */
+  text-align: center;
+  @media (600px < width) {
+    /* margin: 20vh auto 0; */
+  }
+}
+.content {
+  padding: 5vh 1rem 0;
+  @media (600px < width) {
+    padding: 10vh 1rem 0;
+  }
+}
+
+/*
+    MAIN
+================================================ */
+
+.title {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  @media (600px < width) {
+    font-size: 3rem;
+  }
+}
+.moguras-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem 0;
+  @media (600px < width) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+}
+.mogura-box {
+  width: 150px;
+  height: 105px;
+  @media (600px < width) {
+    width: 200px;
+    height: 140px;
+  }
+}
+.mogura {
+  width: 100%;
+  height: auto;
+  visibility: hidden;
+}
+
+.button {
+  background-color: var(--main-color);
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.1em;
+  padding: 1rem;
+  border: 2px solid var(--main-color);
+  border-radius: 50px;
+  transition: 0.4s;
+  width: 220px;
+}
+.button:hover {
+  background-color: var(--white);
+  color: var(--main-color);
+}
+
+.text-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.text {
+  font-size: 1.25rem;
+  @media (600px < width) {
+    font-size: 1.25rem;
+  }
+}
+.text span {
+  font-size: 2rem;
+  @media (600px < width) {
+    font-size: 1.75rem;
+  }
+}
